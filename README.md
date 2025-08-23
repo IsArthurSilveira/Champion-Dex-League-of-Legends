@@ -1,6 +1,6 @@
 # 🏆 Champion Dex - League of Legends
 
-[![Deploy on Vercel](https://vercel.com/button)](https://vercel.com)
+[![Deploy on Vercel](https://vercel.com/button)](https://champion-dex-lol.vercel.app/)
 
 ## 📖 Sobre o Projeto
 
@@ -106,6 +106,8 @@ ProjetoLeagueOfLegends/
    ```
 
 ### Deploy no Vercel
+
+Se quiser fazer seu próprio deploy:
 1. Faça fork ou clone este repositório
 2. Conecte sua conta GitHub ao Vercel
 3. Importe o projeto no Vercel
