@@ -86,7 +86,7 @@ function displayChampions(champions, version) {
         championCard.onclick = () => {
             championCard.classList.add('card-clicking');
             setTimeout(() => {
-                window.location.href = `../src/pages/champion-details.html?champion=${champion.id}&version=${version}`;
+                window.location.href = `detalhes-campeao.html?champion=${champion.id}&version=${version}`;
             }, 200);
         };
 
