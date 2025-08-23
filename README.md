@@ -10,7 +10,7 @@
 
 Este projeto começou como um **hobby pessoal** que eu estava desenvolvendo na minha máquina por diversão, aprendendo desenvolvimento web aos poucos e experimentando com diferentes tecnologias. O código ficou guardado localmente por um tempo, sem estar no GitHub.
 
-Quando meu **professor passou um desafio** de criar um webapp que se conectasse com uma API e fizesse deploy, eu decidi **finalizar e aprimorar** este projeto que já estava em andamento. Foi a oportunidade perfeita para aplicar conceitos acadêmicos em algo que eu já estava construindo com paixão!
+Quando meu **professor da faculdade passou um desafio** de criar um webapp que se conectasse com uma API e fizesse deploy, eu decidi **finalizar e aprimorar** este projeto que já estava em andamento. Foi a oportunidade perfeita para aplicar conceitos acadêmicos em algo que eu já estava construindo com paixão!
 
 O resultado é uma aplicação completa que combina **aprendizado prático**, **criatividade pessoal** e **requisitos acadêmicos** em um projeto do qual tenho muito orgulho.
 
@@ -58,10 +58,8 @@ O resultado é uma aplicação completa que combina **aprendizado prático**, **
 
 ```
 ProjetoLeagueOfLegends/
-├── 📁 public/                    # Arquivos públicos (entry point)
-│   └── index.html               # Página principal da aplicação
-│
 ├── 📁 src/                      # Código fonte organizado
+│   ├── index.html               # Página principal da aplicação
 │   ├── 📁 pages/               # Páginas da aplicação
 │   │   └── champion-details.html  # Página de detalhes do campeão
 │   │
@@ -180,8 +178,7 @@ Este projeto é de código aberto e está disponível sob a licença MIT. Sinta-
  - **Riot Games** pela API oficial do League of Legends
  - **Google Fonts** pela fonte Inter
  - **Comunidade** de desenvolvedores que inspiraram este projeto
- - **Professor Geraldo Gomes da Cruz Junior** por propor este desafio acadêmico, que foi fundamental para a finalização e aprimoramento deste projeto. Obrigado pela inspiração, orientação e incentivo ao aprendizado prático!
-
+ - **Professor Geraldo Gomes da Cruz Junior** por propor este desafio acadêmico, que foi fundamental para a finalização e aprimoramento deste projeto!
 
 ---
 
