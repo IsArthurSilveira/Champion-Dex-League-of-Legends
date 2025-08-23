@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Campeão - Champion Dex</title>
+    <link rel="stylesheet" href="../styles/details.css">
+</head>
+<body>
+    <div id="champion-details-page">
+        <button id="backToListButton" class="btn" onclick="goBackToList()">← Voltar à Lista</button>
+        
+        <!-- Loading State -->
+        <div id="loading-state" class="loading-details">
+            <div class="spinner"></div>
+            <p id="loading-message">Carregando detalhes do campeão...</p>
+        </div>
+        
+        <!-- Error State -->
+        <div id="error-state" class="error-page hidden">
+            <h2 id="error-title">⚠️ Erro ao carregar</h2>
+            <p id="error-message">Não foi possível carregar os detalhes do campeão.</p>
+            <button onclick="loadChampionDetails()" class="btn retry-btn">🔄 Tentar Novamente</button>
+            <button onclick="window.location.href='index.html'" class="btn">🏠 Voltar à Lista</button>
+        </div>
+        
+        <!-- Champion Content -->
+        <div id="champion-content" class="hidden">
+            <!-- Champion Header -->
+            <div class="champion-header">
+                <div class="champion-splash-container">
+                    <img id="champion-splash" class="champion-splash" loading="eager">
+                    <div class="champion-overlay">
+                        <div class="champion-title-section">
+                            <h1 id="champion-name"></h1>
+                            <h2 id="champion-title"></h2>
+                            <div id="champion-tags" class="champion-tags"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Champion Sections -->
+            <div class="champion-sections">
+                <!-- Lore Section -->
+                <section class="champion-lore">
+                    <h3>📖 História</h3>
+                    <div class="lore-content">
+                        <p id="champion-lore"></p>
+                    </div>
+                </section>
+                
+                <!-- Abilities Section -->
+                <section class="champion-abilities">
+                    <h3>⚔️ Habilidades</h3>
+                    <div id="abilities-container" class="abilities-compact">
+                        <!-- Passive Ability -->
+                        <div class="ability-compact passive" onclick="showAbilityModal('passive')">
+                            <div class="ability-icon-compact">
+                                <img id="passive-icon" loading="lazy">
+                                <span class="ability-key">P</span>
+                            </div>
+                            <div class="ability-name-compact">
+                                <span id="passive-name"></span>
+                            </div>
+                        </div>
+                        
+                        <!-- Q Ability -->
+                        <div class="ability-compact" onclick="showAbilityModal('q')">
+                            <div class="ability-icon-compact">
+                                <img id="q-icon" loading="lazy">
+                                <span class="ability-key">Q</span>
+                            </div>
+                            <div class="ability-name-compact">
+                                <span id="q-name"></span>
+                            </div>
+                        </div>
+                        
+                        <!-- W Ability -->
+                        <div class="ability-compact" onclick="showAbilityModal('w')">
+                            <div class="ability-icon-compact">
+                                <img id="w-icon" loading="lazy">
+                                <span class="ability-key">W</span>
+                            </div>
+                            <div class="ability-name-compact">
+                                <span id="w-name"></span>
+                            </div>
+                        </div>
+                        
+                        <!-- E Ability -->
+                        <div class="ability-compact" onclick="showAbilityModal('e')">
+                            <div class="ability-icon-compact">
+                                <img id="e-icon" loading="lazy">
+                                <span class="ability-key">E</span>
+                            </div>
+                            <div class="ability-name-compact">
+                                <span id="e-name"></span>
+                            </div>
+                        </div>
+                        
+                        <!-- R Ability -->
+                        <div class="ability-compact" onclick="showAbilityModal('r')">
+                            <div class="ability-icon-compact">
+                                <img id="r-icon" loading="lazy">
+                                <span class="ability-key">R</span>
+                            </div>
+                            <div class="ability-name-compact">
+                                <span id="r-name"></span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Skins Section -->
+                <section class="champion-skins">
+                    <h3>🎨 Skins</h3>
+                    <div class="skins-wrapper">
+                        <button class="skin-nav-btn skin-prev" onclick="scrollSkins('prev')">‹</button>
+                        <div class="skins-carousel" id="skinsCarousel">
+                            <!-- Skins will be populated here -->
+                        </div>
+                        <button class="skin-nav-btn skin-next" onclick="scrollSkins('next')">›</button>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Ability Details Modal -->
+    <div id="abilityModal" class="ability-modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-ability-name"></h3>
+                <button class="modal-close" onclick="closeAbilityModal()">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-ability-icon">
+                    <img id="modal-ability-image" loading="lazy">
+                    <span id="modal-ability-key" class="ability-key"></span>
+                </div>
+                <div class="modal-ability-details">
+                    <p id="modal-ability-description"></p>
+                    <div id="modal-ability-stats" class="modal-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">⏱️ Cooldown:</span>
+                            <span id="modal-cooldown" class="stat-value"></span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">💙 Custo:</span>
+                            <span id="modal-cost" class="stat-value"></span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">📏 Alcance:</span>
+                            <span id="modal-range" class="stat-value"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-backdrop" onclick="closeAbilityModal()"></div>
+    </div>
+    
+    <footer id="main-footer">
+        <div class="footer-content">
+            <div class="author-info">
+                <p class="created-by">Criado por <span class="author-name">Arthur Silveira</span></p>
+                <p class="project-description">Champion Dex - League of Legends</p>
+            </div>
+            <div class="footer-links">
+                <p class="api-credit">Dados fornecidos pela API oficial do League of Legends - Data Dragon API</p>
+                <p class="copyright">© 2025 - Projeto educacional</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="../scripts/champion-details.js"></script>
+</body>
+</html>

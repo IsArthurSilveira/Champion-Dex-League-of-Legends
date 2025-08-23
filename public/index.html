@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Champion Dex - League of Legends</title>
+    <link rel="stylesheet" href="../src/styles/index.css">
+    <meta name="description" content="Explore todos os campeões do League of Legends com detalhes completos, habilidades e skins.">
+</head>
+<body>
+    <header id="main-header">
+        <h1>Champion Dex - League of Legends</h1>
+        <p class="subtitle">Explore o universo dos campeões do League of Legends</p>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Buscar campeão ou função..." />
+            <div class="search-icon">🔍</div>
+        </div>
+    </header>
+    
+    <main>
+        <div id="loading" class="loading">
+            <div class="spinner"></div>
+            <p>Carregando campeões...</p>
+        </div>
+        
+        <div id="champion-list" class="hidden">
+            <!-- A lista de campeões será inserida aqui pelo JavaScript -->
+        </div>
+    </main>
+    
+    <footer id="main-footer">
+        <div class="footer-content">
+            <div class="author-info">
+                <p class="created-by">Criado por <span class="author-name">Arthur Silveira</span></p>
+                <p class="project-description">Champion Dex - League of Legends</p>
+            </div>
+            <div class="footer-links">
+                <p class="api-credit">Dados fornecidos pela API oficial do League of Legends - Data Dragon API</p>
+                <p class="copyright">© 2025 - Projeto educacional</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="../src/scripts/script.js"></script>
+</body>
+</html>
