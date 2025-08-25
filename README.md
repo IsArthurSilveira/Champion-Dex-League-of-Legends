@@ -60,17 +60,16 @@ O resultado é uma aplicação completa que combina **aprendizado prático**, **
 ProjetoLeagueOfLegends/
 ├── 📁 src/                      # Código fonte organizado
 │   ├── index.html               # Página principal da aplicação
-│   ├── 📁 pages/               # Páginas da aplicação
-│   │   └── champion-details.html  # Página de detalhes do campeão
+│   ├── detalhes-campeoes.html    # Página de detalhes do campeão
 │   │
 │   ├── 📁 styles/              # Folhas de estilo modulares
 │   │   ├── base.css            # CSS base (variáveis, reset, componentes)
 │   │   ├── index.css           # Estilos da página principal
-│   │   └── details.css         # Estilos da página de detalhes
+│   │   └── detalhes.css         # Estilos da página de detalhes
 │   │
 │   └── 📁 scripts/             # Scripts JavaScript
 │       ├── script.js           # Lógica da página principal
-│       └── champion-details.js # Lógica da página de detalhes
+│       └── detalhes-campeoes.js # Lógica da página de detalhes
 │
 └──  📄 README.md                 # Documentação do projeto
 ```
@@ -93,25 +92,6 @@ ProjetoLeagueOfLegends/
 - **Tablet**: ≤ 768px
 - **Mobile**: ≤ 480px
 - **Mobile Small**: ≤ 360px
-
-## 🚀 Como Executar
-
-### Localmente
-1. Clone o repositório
-2. Abra o arquivo `public/index.html` em um navegador
-3. Ou use um servidor local:
-   ```bash
-   npm install
-   npm run dev
-   ```
-
-### Deploy no Vercel
-
-Se quiser fazer seu próprio deploy:
-1. Faça fork ou clone este repositório
-2. Conecte sua conta GitHub ao Vercel
-3. Importe o projeto no Vercel
-4. Deploy automático será realizado
 
 ### Arquitetura Modular
 - **Separação de Responsabilidades**: Cada tipo de arquivo em sua pasta
